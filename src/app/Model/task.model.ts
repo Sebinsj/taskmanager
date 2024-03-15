@@ -1,7 +1,8 @@
 export class Task{
-    id:string;
+    
     title:string;
     desc:string;
-    status:boolean;
+    id?:string;
+    
 
 }
