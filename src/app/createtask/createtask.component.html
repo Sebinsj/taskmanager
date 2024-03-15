@@ -1,0 +1,18 @@
+
+    <h1 class="heading">Create Task</h1>
+    <div class="container">
+        <div class="row">
+            <form class="form" action="" [formGroup]="taskForm" (ngSubmit)="onAddTask(taskForm.value)" >
+                <div class="form-group">
+                    <label for="taskTitle" style="margin: 10px auto;">Enter Task Title:</label>
+                    <input type="text" id="taskTitle" class="form-control" formControlName="title">
+                </div>
+                   
+                <div class="form-group">
+                    <label for="taskDescription"style="margin: 10px auto;">Enter Task description:</label>
+                    <textarea id="taskDescription" class="form-control" rows="3" cols="50" formControlName="desc"></textarea>
+                </div> 
+                <button class="btn btn-primary" style="margin: 10px auto;  background-color:black ">Add Task</button>    
+            </form>
+        </div>
+    </div>

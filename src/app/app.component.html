@@ -4,24 +4,24 @@
     <div class="col-12 col-md-2 sidebar">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <h3 class="nav-link-main">Task Manager</h3>
+          <h3 class="nav-link-main" routerLink="Home">Task Manager</h3>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" routerLink="Home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Create Task</a>
+          <a class="nav-link" routerLink="CreateTask">Create Task</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Edit Task</a>
+          <a class="nav-link" routerLink="EditTask">Edit Task</a>
         </li>
       </ul>
     </div>
 
     <!-- Main content area -->
     <main role="main" class="col-12 col-md-10 main-content">
-      <h1>Main Content Area</h1>
-      <p>This is the main content area where your page content will go.</p>
+      
+      <router-outlet></router-outlet>
     </main>
   </div>
 </div>
