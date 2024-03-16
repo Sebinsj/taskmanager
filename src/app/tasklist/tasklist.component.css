@@ -9,6 +9,7 @@
   .row {
     display: flex;
     flex-direction: column;
+    
   }
   
   h1 {
@@ -66,3 +67,6 @@
     background-color: #c82333;
   }
   
+  .form-control{
+    background-color:rgb(250, 232, 75)
+  }
