@@ -11,15 +11,19 @@ import { Task } from '../Model/task.model';
 export class ViewtaskComponent  implements OnInit{
   selectedTaskId:string='';
   selectedTask:any;
+  isFetching:boolean=false;
 constructor(private route:ActivatedRoute,private taskService:TaskService, private router:Router){}
   ngOnInit(){
+    this.isFetching=true
     this.selectedTaskId=this.route.snapshot.paramMap.get('id');
     if(this.selectedTaskId){
       this.taskService.getTaskbyId(this.selectedTaskId).subscribe((res)=>{
         this.selectedTask=res
+        this.isFetching=false
 
       })
     }
+    
   }
   viewEdit(){
     this.router.navigate(['EditTask',this.selectedTaskId])

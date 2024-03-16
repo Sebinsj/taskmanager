@@ -63,6 +63,16 @@
     cursor: pointer;
     margin-right: 10px;
   }
+  .btn-view {
+    padding: 5px 10px;
+    background-color: #1d0684;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
   .btn-delete:hover {
     background-color: #c82333;
   }
