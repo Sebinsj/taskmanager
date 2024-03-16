@@ -22,8 +22,9 @@ export class TasklistComponent implements OnInit{
   private fetchTasks(){
     this.isFetching=true
     this.taskService.getTasks().subscribe((tasks)=>{
-      console.log(tasks);
       this.allTasks=tasks
+      console.log(this.allTasks);
+      
       this.isFetching=false
       
     })

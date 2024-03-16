@@ -30,7 +30,8 @@ export class TaskService{
     }
 
 
-    editTask(){
+    editTask(id,value){
+      return this.http.put('https://tasktrackerbyssj-default-rtdb.firebaseio.com/tasks/'+id+'.json',value)
     
     }
 
