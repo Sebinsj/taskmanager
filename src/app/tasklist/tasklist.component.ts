@@ -42,6 +42,10 @@ export class TasklistComponent implements OnInit{
    
     
   }
+  onViewTask(id:string){
+    this.route.navigate(['ViewTask',id])
+
+  }
     
   }
   

@@ -4,12 +4,14 @@ import { TasklistComponent } from './tasklist/tasklist.component';
 import { CreatetaskComponent } from './createtask/createtask.component';
 import { EdittaskComponent } from './edittask/edittask.component';
 import { ErrorComponent } from './error/error.component';
+import { ViewtaskComponent } from './viewtask/viewtask.component';
 
 const routes: Routes = [
   {path:'',component:TasklistComponent},
   {path:'Home',component:TasklistComponent},
   {path:'CreateTask',component:CreatetaskComponent},
   {path:'EditTask/:id',component:EdittaskComponent},
+  {path:'ViewTask/:id',component:ViewtaskComponent},
   {path:'**',component:ErrorComponent}
 
 

@@ -9,6 +9,7 @@ import { EdittaskComponent } from './edittask/edittask.component';
 import { ErrorComponent } from './error/error.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ViewtaskComponent } from './viewtask/viewtask.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     TasklistComponent,
     CreatetaskComponent,
     EdittaskComponent,
-    ErrorComponent
+    ErrorComponent,
+    ViewtaskComponent
   ],
   imports: [
     BrowserModule,

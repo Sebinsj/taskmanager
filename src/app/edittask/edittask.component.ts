@@ -10,17 +10,19 @@ import { Task } from '../Model/task.model';
   styleUrl: './edittask.component.css'
 })
 export class EdittaskComponent implements OnInit{
-  constructor(private route:ActivatedRoute,private taskService:TaskService,private router:Router){}
+  constructor(private route:ActivatedRoute,private taskService:TaskService,private router:Router){
+    this.taskFormEdit=new FormGroup({
+      title:new FormControl(null,Validators.required),
+      desc:new FormControl(null,Validators.required),
+    })
+  }
   taskFormEdit:FormGroup;
   selectedTaskId:string=''
   selectedTask: any;
   taskId:string='';
 
   ngOnInit(){
-    this.taskFormEdit=new FormGroup({
-      title:new FormControl(null,Validators.required),
-      desc:new FormControl(null,Validators.required),
-    })
+   
 
 
     this.taskId=this.route.snapshot.paramMap.get('id');
