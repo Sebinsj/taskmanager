@@ -80,3 +80,9 @@
   .form-control{
     background-color:rgb(250, 232, 75)
   }
+  .heading {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+    
+}
