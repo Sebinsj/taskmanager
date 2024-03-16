@@ -22,9 +22,13 @@ export class CreatetaskComponent {
   onAddTask(task:{title:string,desc:string}){
     // console.log(this.taskForm);
     // console.log(task);
-    this.taskService.createTask(task)
+    this.taskService.createTask(task).subscribe((res)=>{
+            
+            
+    })
+}
     
     
     
   }
-}
+

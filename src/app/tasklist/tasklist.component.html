@@ -1,18 +1,28 @@
 <div class="container">
     <div class="row">
+      <h1>All Tasks</h1>
+      <button class="btn btn-prmary" routerLink="/CreateTask">Add a New Task</button>
+
+      <div *ngIf="allTasks.length<1&&!isFetching">
+      <h5>No Tasks Available</h5>
+      </div>
+
+      <div *ngIf="isFetching">
+        <h5>Loading........</h5>
+        </div>
+
       <div *ngFor="let task of allTasks;index as i">
         <div class="form-group" style="padding-top: 20px;">
           <div class="form-control">
             <h5>{{i+1}}.  Title: {{ task.title }}</h5>
             <p>   Description: {{ task.desc }} </p>
-            <button class="btn-delete" (click)="onDeleteTask(task.id)">delete</button>
-            
-
+            <button class="btn-delete" (click)="onDeleteTask(task.id)">Delete Task</button>
+            <button class="btn-delete" (click)="onEditTask(task.id)" routerLink="EditTask ">Edit Task</button>
           </div>
         </div>
-        
-        
       </div>
+
+
     </div>
   </div>
   

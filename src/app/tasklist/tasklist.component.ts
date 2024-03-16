@@ -3,6 +3,7 @@ import { TaskService } from '../Services/task.service';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs';
 import { Task } from '../Model/task.model';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-tasklist',
@@ -28,10 +29,16 @@ export class TasklistComponent implements OnInit{
     
   }
   onDeleteTask(id:string){
-    
+    this.taskService.deleteTask(id).subscribe()
 
   }
-
+ 
+  onEditTask(id:string){
+   let currentTask= this.allTasks.find((p)=>{return p.id===id})
+   console.log(currentTask);
+   
+    
+  }
     
   }
   

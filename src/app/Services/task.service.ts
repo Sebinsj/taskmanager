@@ -10,11 +10,8 @@ export class TaskService{
     ngOnInit(){}
 
     createTask(task){
-        // console.log(task);
-        this.http.post('https://tasktrackerbyssj-default-rtdb.firebaseio.com/tasks.json',task).subscribe((res)=>{
-            console.log(res);
-            
-        })
+        
+       return this.http.post('https://tasktrackerbyssj-default-rtdb.firebaseio.com/tasks.json',task)
     }
 
     getTasks(){
@@ -39,7 +36,8 @@ export class TaskService{
 
 
 
-    deleteTask(){
+    deleteTask(id:string){
+       return this.http.delete('https://tasktrackerbyssj-default-rtdb.firebaseio.com/tasks/'+id+'.json')
 
     }
 
