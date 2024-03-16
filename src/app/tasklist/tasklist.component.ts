@@ -31,7 +31,9 @@ export class TasklistComponent implements OnInit{
     
   }
   onDeleteTask(id:string){
-    this.taskService.deleteTask(id).subscribe()
+    this.taskService.deleteTask(id).subscribe(()=>{
+      this.fetchTasks()
+    })
 
   }
  

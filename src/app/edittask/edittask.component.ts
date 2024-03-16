@@ -10,7 +10,7 @@ import { Task } from '../Model/task.model';
   styleUrl: './edittask.component.css'
 })
 export class EdittaskComponent implements OnInit{
-  constructor(private route:ActivatedRoute,private taskService:TaskService){}
+  constructor(private route:ActivatedRoute,private taskService:TaskService,private router:Router){}
   taskFormEdit:FormGroup;
   selectedTaskId:string=''
   selectedTask: any;
@@ -45,7 +45,10 @@ export class EdittaskComponent implements OnInit{
   }
   onEditTask(){
     
-    this.taskService.editTask(this.taskId,this.taskFormEdit.value).subscribe()
+    this.taskService.editTask(this.taskId,this.taskFormEdit.value).subscribe(()=>{
+      this.router.navigate(['/'])
+
+    })
 
   }
 

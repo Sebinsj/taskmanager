@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TaskService } from '../Services/task.service';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-createtask',
@@ -8,7 +9,7 @@ import { TaskService } from '../Services/task.service';
   styleUrl: './createtask.component.css'
 })
 export class CreatetaskComponent {
-  constructor(private taskService:TaskService){
+  constructor(private taskService:TaskService,private router:Router){
 
   }
   taskForm:FormGroup;
@@ -22,10 +23,11 @@ export class CreatetaskComponent {
   onAddTask(task:{title:string,desc:string}){
     // console.log(this.taskForm);
     // console.log(task);
+
     this.taskService.createTask(task).subscribe((res)=>{
-            
-            
+      this.router.navigate(['/']);
     })
+    
 }
     
     
