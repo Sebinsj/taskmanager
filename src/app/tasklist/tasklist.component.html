@@ -1,11 +1,17 @@
 <div class="container">
     <div class="row">
-      <div *ngFor="let task of allTasks">
-        <!-- Your task display code here -->
-        <!-- For example, to display task title and description: -->
-        <h3>{{ task.title }}</h3>
+      <div *ngFor="let task of allTasks;index as i">
+        <div class="form-group" style="padding-top: 20px;">
+          <div class="form-control">
+            <h5>{{i+1}}.  Title: {{ task.title }}</h5>
+            <p>   Description: {{ task.desc }} </p>
+            <button class="btn-delete" (click)="onDeleteTask(task.id)">delete</button>
+            
+
+          </div>
+        </div>
         
-        <p>{{ task.desc }}</p>
+        
       </div>
     </div>
   </div>

@@ -11,36 +11,25 @@ import { Task } from '../Model/task.model';
 })
 export class TasklistComponent implements OnInit{
   allTasks:Task[]=[];
+  isFetching:boolean=false;
   constructor(private taskService:TaskService,private http :HttpClient){}
   ngOnInit(){
     this.fetchTasks();
-
-    
-    //   this.taskService.getTasks()
-    //   .subscribe((res)=>{
-
-    //     this.datas.push(res)
-
-    //     console.log(this.datas);
-        
-
-    // })
+   
     }
   private fetchTasks(){
-    this.http.get <{[key:string]:Task}>('https://tasktrackerbyssj-default-rtdb.firebaseio.com/tasks.json')
-    .pipe(map((res)=>{
-    const tasks=[];  
-    for(const key in res){
-      if(res.hasOwnProperty(key)){
-        tasks.push({...res[key],id:key})
-      }
-      }
-      return tasks
-    }))
-    .subscribe((tasks)=>{
+    this.isFetching=true
+    this.taskService.getTasks().subscribe((tasks)=>{
       console.log(tasks);
-      this.allTasks=tasks;
+      this.allTasks=tasks
+      this.isFetching=false
+      
     })
+    
+  }
+  onDeleteTask(id:string){
+    
+
   }
 
     
