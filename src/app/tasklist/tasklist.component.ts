@@ -3,7 +3,7 @@ import { TaskService } from '../Services/task.service';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs';
 import { Task } from '../Model/task.model';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-tasklist',
@@ -13,7 +13,8 @@ import { RouterLink } from '@angular/router';
 export class TasklistComponent implements OnInit{
   allTasks:Task[]=[];
   isFetching:boolean=false;
-  constructor(private taskService:TaskService,private http :HttpClient){}
+  
+  constructor(private taskService:TaskService,private http :HttpClient,private route:Router){}
   ngOnInit(){
     this.fetchTasks();
    
@@ -34,8 +35,7 @@ export class TasklistComponent implements OnInit{
   }
  
   onEditTask(id:string){
-   let currentTask= this.allTasks.find((p)=>{return p.id===id})
-   console.log(currentTask);
+   this.route.navigate(['EditTask',id])
    
     
   }
